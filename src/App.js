@@ -8,6 +8,9 @@ function App() {
   const increment = ()=> { dispatch({type: "INCREMENT"})}
   const decrement = ()=> { dispatch({type: "DECREMENT"})}
 
+  const add = ()=> { dispatch({type:"ADD" , payload: 10 })}
+  const reset =()=> {dispatch({type: "RESET"})}
+
   return (
    <div>
      <h1>Counter App</h1>
@@ -15,6 +18,8 @@ function App() {
 
      <button onClick={increment}>Increment</button>
      <button onClick={decrement}>Decrement</button>
+     <button onClick={add}>Add 10</button>
+     <button onClick={reset}>Reset</button>
    </div>
   );
 }
