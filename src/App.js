@@ -1,15 +1,16 @@
 import {useDispatch, useSelector} from 'react-redux'
+import {actions } from './store/index'; //action = counterSlice.action 
 
 
 function App() {
   const counter = useSelector((state)=> state.counter);
   const dispatch = useDispatch(); //dispatch(action)
 
-  const increment = ()=> { dispatch({type: "INCREMENT"})}
-  const decrement = ()=> { dispatch({type: "DECREMENT"})}
+  const increment = ()=> { dispatch(actions.increment())}
+  const decrement = ()=> { dispatch(actions.decrement())}
 
-  const add = ()=> { dispatch({type:"ADD" , payload: 10 })}
-  const reset =()=> {dispatch({type: "RESET"})}
+  const add = ()=> { dispatch(actions.add(10))}
+  const reset =()=> {dispatch(actions.reset())}
 
   return (
    <div>
